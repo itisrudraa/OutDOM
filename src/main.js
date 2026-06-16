@@ -1,5 +1,6 @@
 import app from "./app.js";
-import { renderToString } from "./renderer.js";
+import { renderToString, render } from "./renderer.js";
 
 
-document.body.innerHTML = renderToString(app);
+document.body.appendChild(render(app));
+// document.body.innerHTML = renderToString(app);
