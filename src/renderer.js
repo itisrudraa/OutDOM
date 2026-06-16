@@ -1,7 +1,7 @@
 // This file contains functions to render the virtual DOM
 
 
-//function  to convert from tree object to html string
+// Render a virtual DOM tree into an HTML string
 export function renderToString(vdom){
     if(typeof vdom === "string") return vdom;
     return `
@@ -15,10 +15,16 @@ export function renderToString(vdom){
     `;
 };
 
+// Render a virtual DOM tree into real DOM nodes
 export function render(vdom){
     const dom = (typeof vdom === "object")? document.createElement(vdom.type) : document.createTextNode(vdom);
 
     if(typeof vdom === "object"){
+        //add props
+        Object.entries(vdom.props).forEach(([key, value]) => {
+            dom.setAttribute(key, value);
+        });
+        //add children
         vdom.children.forEach((child) => {
             dom.appendChild(render(child));
         });
