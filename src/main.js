@@ -8,6 +8,6 @@ function mount(container, vdom){
 
 const root = document.querySelector(".root");
 
-mount(root, app);
+mount(root, app());
 // document.body.appendChild(render(app));
 // document.body.innerHTML = renderToString(app);
