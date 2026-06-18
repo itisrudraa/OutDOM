@@ -22,7 +22,13 @@ export function render(vdom){
     if(typeof vdom === "object"){
         //add props
         Object.entries(vdom.props).forEach(([key, value]) => {
-            dom.setAttribute(key, value);
+            if(key.startsWith("on")){  
+                const event = key.substring(2).toLocaleLowerCase();
+                dom.addEventListener(event, value); //handle events
+            }
+            else{     
+                dom.setAttribute(key, value);
+            }
         });
         //add children
         vdom.children.forEach((child) => {
