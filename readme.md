@@ -129,7 +129,7 @@ The Virtual DOM node is rendered into the DOM and later reconciled against futur
 Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/outdom.git
+git clone https://github.com/itisrudraa/OutDOM
 ```
 
 Navigate into the project:
