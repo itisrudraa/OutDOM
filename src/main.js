@@ -1,5 +1,6 @@
 import app from "./app.js";
 import { renderToString, render } from "./renderer.js";
+import reconcile from "./reconciler.js";
 
 const root = document.querySelector(".root");
 
@@ -13,10 +14,7 @@ function start(){
 
 export function update(){
     const nextTree = app();
-
-
-    root.innerHTML="";
-    mount(root, nextTree);
+    reconcile(root, root.childNodes[0], currentTree, nextTree);
     currentTree = nextTree;
 };
 
