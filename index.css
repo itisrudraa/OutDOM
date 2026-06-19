@@ -1,0 +1,38 @@
+body{
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.textcontent h1{
+    font-size: 50px;
+}
+.textcontent p{
+    font-size: 20px;
+}
+.features{
+    font-size: 19px;
+}
+
+.counter{
+    background-color: aquamarine;
+    border-radius: 30px;
+    padding: 20px;
+    width: 100%;
+}
+
+.counter p{
+    font-size: 20px;
+    color: red;
+}
+.counter button{
+    padding-left: 8px;
+    padding-right: 8px;
+    margin: 3px;
+    cursor: pointer;
+    background-color: rgb(27, 177, 127);
+    border: none;
+    border-radius: 5px;
+
+}
