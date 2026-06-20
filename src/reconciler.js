@@ -20,18 +20,18 @@ function reconcile(parentDom, domNode, currentTree, nextTree){
         Object.entries(nextTree.props).forEach(([key, value]) =>{
             if(currentTree.props[key]!=value){
                 if(key.startsWith("on")){  
-                    const event = key.substring(2).toLocaleLowerCase();
+                    const event = key.substring(2).toLowerCase();
                     domNode.removeEventListener(event, currentTree.props[key]);
                     domNode.addEventListener(event, value);
                 }
                 else
-                    domNode.setAttribue(key, value);
+                    domNode.setAttribute(key, value);
             }
         });
         Object.entries(currentTree.props).forEach(([key, value]) => {
             if(!(key in nextTree.props)){
                 if(key.startsWith("on")){  
-                    const event = key.substring(2).toLocaleLowerCase();
+                    const event = key.substring(2).toLowerCase();
                     domNode.removeEventListener(event, value);
                 }
                 else 
